@@ -76,11 +76,6 @@ classChecked();
 
 const addButton = document.getElementById('addBtn');
 addButton.addEventListener('click', addNewElement, false);
-addButton.addEventListener('keypress', event => {
-  if(event.keyCode === 13) {
-       console.log(event.target.keyCode);
-  }
-});
 
 
 
