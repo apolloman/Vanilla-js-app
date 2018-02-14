@@ -1,0 +1,276 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-size: 16px;
+  font-family: 'PT Sans', sans-serif;
+  background: #4d515e;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-content-block {
+  min-height: 500px;
+  max-width: 960px;
+  display: flex;
+  margin: 30px auto 20px auto;
+  border-radius: 10px;
+  box-shadow: 3px 3px 30px 3px rgba(0,0,0, .5);
+}
+
+.left-part {
+   height: auto;
+   display: flex;
+   flex-flow: column;
+   flex-grow: 1;
+   background-color: #fff;
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+}
+
+.left-part-content {
+  padding: 70px 20px 20px 50px;
+}
+
+.left-part-content p.little-title:first-child {
+  text-transform: uppercase;
+  color: #bfbfbf;
+  letter-spacing: 1px;
+  font-size: .8em;
+  font-weight: 700;
+}
+
+p.little-title-2 {
+  font-weight: 300;
+  color: #bfbfbf;
+  margin-bottom: 40px;
+}
+
+h1.big-title {
+  font-weight: 300;
+  color: #8c8c8c;
+  font-size: 2.5em;
+}
+
+div.left-footer {
+  border-top: 1px solid #ccc;
+  width: 100%;
+  margin-top: auto;
+  padding: 20px 0 20px 50px;
+}
+
+strong {
+  display: inline-block;
+  color: #000;
+}
+
+.left-footer span:not(strong) {
+  color: #808080;
+  font-weight: 300;
+  font-size: .8em;
+  display: inline-block;
+}
+
+.right-part {
+  flex-grow: 1;
+  background: url(../img/city.jpg);
+  background-size: cover;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+
+/* Form Styles */
+form.group {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+::placeholder {
+  font-size: .8em;
+  text-transform: uppercase;
+}
+
+input[type=text] {
+  width: 80%;
+  padding: 15px 0px 15px 10px;
+  border: 1px solid #ccc;
+  border-right: none;
+  font-size: .8em;
+}
+
+#addBtn {
+  border: none;
+  background-color: #ff6666;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .5s transform ease-in-out, .5s box-shadow ease-in-out;
+  outline: none;
+}
+
+#addBtn:hover {
+   transform: scale(1.2);
+   box-shadow: 0 10px 8px -6px rgba(128, 128, 128, .5);
+   border: none;
+}
+
+.error {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+input:focus {
+    outline: 0;
+  }
+
+label {
+    position: absolute;
+    left: .5%;
+    top: 20%;
+    transition: all 1s;
+  }
+
+label[for="name"] {
+    transform: translateY(-8px);
+    color: #4d4d4d;
+    font-weight: 300;
+    font-size: .75em;
+  }
+
+input:placeholder-shown + label {
+    cursor: text;
+    opacity: 0;
+    font-size: .7em;
+    color: #4d4d4d;
+    transform: translateY(-60px);
+    /*
+    transform: translate(0rem, -2.125rem) scale(1);
+    */
+}
+/* End Form Styles */
+
+
+/* List Styles Begin */
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 95%;
+  margin-top: 10px;
+}
+
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: .5s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /*
+    display: flex;
+    align-items: center;
+    */
+}
+
+i.fa {
+  /*
+  margin-left: auto;
+  align-self: center;
+  */
+  position: absolute;
+  top: 25%;
+  right: 3%;
+}
+
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+ul li:hover {
+    background: #ddd;
+}
+
+ul li.checked:not(i) {
+  /*
+    background: #888;
+    color: #fff;
+    */
+    background: #fff;
+    color: #000;
+    font-weight: 300;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #00e600;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+.close {
+   transition: color 1s ease;
+}
+
+.close:hover {
+    color: #ff0000;
+}
+/* End List Styles */
+
+
+/* Animation on Delete Button Event */
+.hideSlow {
+   animation-name: hide;
+   animation-duration: 1s;
+   animation-timing-function: ease-in-out;
+   animation-fill-mode: forwards;
+   cursor: pointer;
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+}
+/* End Animation */
+
+
+
+@media screen and (max-width: 480px)  {
+  .flex-content-block {
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .left-part {
+    border-radius: 10px;
+  }
+
+   h1.big-title {
+     font-size: 1.5em;
+   }
+
+   ul li {
+     width: 100%;
+   }
+}
