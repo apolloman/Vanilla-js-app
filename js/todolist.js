@@ -76,21 +76,3 @@ classChecked();
 
 const addButton = document.getElementById('addBtn');
 addButton.addEventListener('click', addNewElement, false);
-
-
-
-
-/*
-  const deleteTrash = document.createElement('i');
-  deleteTrash.classList.add("fa", "fa-trash-o", "close");
-
-  newLi.appendChild(deleteTrash);
-
-  for (let i = 0; i < trashBtn.length; i++) {
-    trashBtn[i].onclick = function() {
-      const liElem = this.parentElement;
-      liElem.style.display = "none";
-    }
-
-  }
-*/
