@@ -150,6 +150,22 @@ input:placeholder-shown + label {
     transform: translate(0rem, -2.125rem) scale(1);
     */
 }
+ input[type="search"] {
+   width: 15%;
+   margin-bottom: 20px;
+   border: none;
+   border-bottom: 1px solid #ccc;
+   padding: 5px 0 5px 10px;
+   transition: .5s width ease-in-out;
+ }
+
+ input[type="search"]:focus {
+   width: 50%;
+   border-color: coral;
+ }
+
+
+
 /* End Form Styles */
 
 

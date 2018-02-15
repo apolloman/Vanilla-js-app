@@ -1,4 +1,24 @@
 'use strict';
+const searchItem = document.getElementById('search');
+searchItem.addEventListener('keyup', filterItems, false);
+
+const listItem = document.getElementsByTagName('li');
+
+function filterItems(e){
+
+  let text = e.target.value.toLowerCase();
+
+  Array.from(listItem).forEach(function(item){
+    let itemName = item.firstChild.textContent;
+
+    if(itemName.toLowerCase().indexOf(text) != -1){
+      item.style.display = 'block';
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
+
 
 //create trash and append to each list item
 function addTrashToAllItems() {
