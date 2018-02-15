@@ -55,10 +55,11 @@ function addNewElement() {
   } else {
     const error = document.querySelector('.error');
     error.textContent = "";
-    /*
+
     document.getElementById('UL').appendChild(newLi);
-    */
+    /*
     document.getElementById('UL').insertBefore(newLi, UL.children[0]);
+    */
   }
   document.getElementById('inputVal').value = "";
 
