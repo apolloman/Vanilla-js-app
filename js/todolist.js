@@ -17,13 +17,16 @@ function eventsDeleteButtons(){
   const trashBtn = document.getElementsByClassName('close');
   const allTrashes = [...trashBtn];
 
+  //Loop over all trash elements and add click event to each after they are hidden
   allTrashes.forEach((trashes) => {
   trashes.addEventListener('click', function(){
     const liElem = this.parentElement;
     liElem.classList.add("hideSlow");
-    /*
-    liElem.style.display = 'none';
-    */
+
+    setTimeout(function(){
+        liElem.style.display = 'none';
+    }, 1200);
+
   });
 });
 
@@ -50,13 +53,13 @@ function addNewElement() {
   newLi.appendChild(text);
 
   if (inputValue === '') {
-    const error = document.querySelector('.error');
-    error.textContent = "Your task field is empty";
+       const error = document.querySelector('.error');
+       error.textContent = "Your task field is empty";
   } else {
-    const error = document.querySelector('.error');
-    error.textContent = "";
+       const error = document.querySelector('.error');
+       error.textContent = "";
 
-    document.getElementById('UL').appendChild(newLi);
+       document.getElementById('UL').appendChild(newLi);
     /*
     document.getElementById('UL').insertBefore(newLi, UL.children[0]);
     */
@@ -76,4 +79,5 @@ classChecked();
 
 
 const addButton = document.getElementById('addBtn');
+
 addButton.addEventListener('click', addNewElement, false);
