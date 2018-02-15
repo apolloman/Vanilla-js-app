@@ -66,6 +66,7 @@ function classChecked(){
 
 //Add new Element to List
 function addNewElement() {
+
   const newLi = document.createElement('li');
   const inputValue = document.getElementById('inputVal').value;
 
@@ -99,5 +100,6 @@ classChecked();
 
 
 const addButton = document.getElementById('addBtn');
-
 addButton.addEventListener('click', addNewElement, false);
+
+

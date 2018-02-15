@@ -271,7 +271,7 @@ ul li.checked::before {
 /* End Animation */
 
 
-
+/* Media Styles */
 @media screen and (max-width: 480px)  {
   .flex-content-block {
     flex-direction: column;
@@ -290,4 +290,14 @@ ul li.checked::before {
    ul li {
      width: 100%;
    }
+
+   input[type="search"] {
+     width: 30%;
+   }
+
+   input[type="search"]:focus {
+     width: 100%;
+   }
+
 }
+/* End Media Styles */
